@@ -1,6 +1,6 @@
 package jwt.example.controllers;
 
-import jwt.example.model.User;
+import jwt.example.entities.User;
 import jwt.example.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +15,7 @@ import java.util.List;
 public class HomeController {
 
     @Autowired
-    UserService userService;
+    private UserService userService;
     @GetMapping("/users")
     public List<User> getUsers(){
         return this.userService.getAllUsers();
